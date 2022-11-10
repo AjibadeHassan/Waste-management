@@ -1,4 +1,7 @@
 @media(max-width: 900px) {
+    .Header_container {
+        position: relative;
+    }
     .Nav_list {
         display: none;
     }
@@ -16,5 +19,53 @@
         background-color: rgb(241, 124, 81);
         color: #fff;
         border: 1px solid white;
+    }
+
+    @keyframes myAnim {
+        0% {
+            transform: translateX(70%);
+            opacity: 0.65;
+        }
+
+        100% {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+
+    .Mobile_nav {
+        width: 35%;
+        height: 60vh;
+        display: flex;
+        position: absolute;
+        z-index: 50;
+        animation: myAnim 0.2s ease-in;
+        transition: all 350ms;
+        top: 100%;
+        right: 0;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        justify-content: space-evenly;
+        color: rgb(241, 124, 81);
+    }
+
+    .Mobile_nav:active {
+        background-color: #fff;
+        color: rgb(241, 124, 81);
+    }
+
+    .Mobile_nav li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .Mobile_nav li:hover {
+        background-color: rgb(241, 124, 81);
+        color: white;
     }
 }
