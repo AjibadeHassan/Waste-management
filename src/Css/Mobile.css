@@ -1,0 +1,20 @@
+@media(max-width: 900px) {
+    .Nav_list {
+        display: none;
+    }
+    .Nav_Menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        cursor: pointer;
+        background-color: #fff;
+        color: rgb(241, 124, 81);
+    }
+
+    .Nav_Menu:hover {
+        background-color: rgb(241, 124, 81);
+        color: #fff;
+        border: 1px solid white;
+    }
+}
