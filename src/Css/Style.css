@@ -7,6 +7,10 @@
 .Header_container {
     width: 100%;
     height: 70px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
     background-color: rgb(241, 124, 81);
     color: white;
     display: flex;
@@ -56,7 +60,14 @@
 .Home_container{
     width: 100%;
     height: 90vh;
-    background: url('../Assets/Homeback.jpg'), rgba(167, 34, 34, 0.904);
+    background: url('../Assets/sceptic\ tank.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.Abouthome_container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(241, 124, 81);
+    color: white;
 }
