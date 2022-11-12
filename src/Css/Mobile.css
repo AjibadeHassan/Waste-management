@@ -1,4 +1,8 @@
 @media(max-width: 900px) {
+
+    .Image_container span {
+        display: none;
+    }
    
     .Nav_list {
         display: none;
@@ -7,17 +11,24 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 15px;
+        font-weight: 600;
+        font-size: 32px;
+        padding: 5px;
         cursor: pointer;
-        background-color: #fff;
-        color: rgb(241, 124, 81);
     }
 
-    .Nav_Menu:hover {
+    .Orange_menu {
+        background-color: #fff;
+        color: rgb(241, 124, 81);
+        /* border: 1px solid rgb(241, 124, 81); */
+    }
+
+    .White_menu {
         background-color: rgb(241, 124, 81);
         color: #fff;
-        border: 1px solid white;
+        /* border: 1px solid white; */
     }
+
 
     @keyframes myAnim {
         0% {
