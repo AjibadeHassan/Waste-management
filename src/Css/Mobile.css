@@ -1,7 +1,5 @@
 @media(max-width: 900px) {
-    .Header_container {
-        position: relative;
-    }
+   
     .Nav_list {
         display: none;
     }
@@ -67,5 +65,24 @@
     .Mobile_nav li:hover {
         background-color: rgb(241, 124, 81);
         color: white;
+    }
+
+    .Abothome_Div {
+        flex-direction: column;
+        height: max-content;
+    }
+
+    .Img_container {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .About_Info {
+        width: 95%;
+    }
+
+    .About_Info h3 {
+        width: 100%;
+        margin: 12px 0px;
     }
 }

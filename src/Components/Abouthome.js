@@ -1,8 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Logo from '../Assets/Profile.png'
 
 
 const Abouthome = () => {
+  const Nav = useNavigate()
+ 
   return (
     <div className='Abouthome_container'>
       <h1>About Us</h1>
@@ -26,6 +29,7 @@ your septic tank evacuation. We cover all over lagos. We are prompt.
 <h3>Our Services has been Unmatched</h3>
         </section>
        </div>
+       <span onClick={()=> Nav('About')} className='More_Btn About_btn'>See More...</span>
     </div>
   )
 }
