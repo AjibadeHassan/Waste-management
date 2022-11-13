@@ -1,6 +1,7 @@
 import React from 'react'
 import { MdOutlineHighQuality,MdBlock } from 'react-icons/md'
 import { BsTrash,BsLaptop } from 'react-icons/bs'
+import { GiSpanner } from 'react-icons/gi'
 const Servicehome = () => {
   return (
     <div className='Servicehome_container'>
@@ -35,6 +36,7 @@ const Servicehome = () => {
              to keep things fresh.</p>
         </section>
         <section className='Servicehome_Card'>
+          <GiSpanner className='Serv_icon'/>
           <h3>We Solve Issues Like:</h3>
           <p>Toilets running slow, Shower is running slow,
              Excessive grass growth around the septic tank etc.</p>

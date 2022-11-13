@@ -94,6 +94,7 @@
 
     .About_Info h3 {
         width: 100%;
+        text-align: center;
         margin: 12px 0px;
     }
 
@@ -104,6 +105,6 @@
     }
 
     .Servicehome_Card {
-        width: 60%;
+        width: 95%;
     }
 }
