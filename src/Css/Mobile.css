@@ -106,5 +106,12 @@
 
     .Servicehome_Card {
         width: 95%;
+        border-radius: 7px;
+    }
+
+    .Servicehome_Card:hover {
+        transition: none;
+        border: none;
+        transform: none;
     }
 }
