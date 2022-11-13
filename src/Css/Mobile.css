@@ -96,4 +96,14 @@
         width: 100%;
         margin: 12px 0px;
     }
+
+    .Serv_cards {
+        width: 100%;
+        flex-direction: column;
+        height: max-content;
+    }
+
+    .Servicehome_Card {
+        width: 60%;
+    }
 }
