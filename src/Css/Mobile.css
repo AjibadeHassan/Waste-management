@@ -111,7 +111,13 @@
 
     .Servicehome_Card:hover {
         transition: none;
+        color: white;
+        background-color: rgb(241, 124, 81);
         border: none;
         transform: none;
+    }
+
+    .Contacthome_div {
+        width: 90%;
     }
 }
