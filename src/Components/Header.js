@@ -21,12 +21,12 @@ const Header = () => {
             setVary('Header_container Orange_Header')
             setIcon('Nav_Menu White_menu')
         }
-         console.log(first)
+        //  console.log(first)
         }
       
         window.addEventListener('scroll', Pos, true)
   return (
-    <div className={vary}>
+    <header className={vary}>
         <div className='Image_container'>
             <h1>Fumi</h1>
             <span>sewage management services</span>
@@ -36,14 +36,14 @@ const Header = () => {
             window.location.reload()
         }}>Home</li>
             <li onClick={()=> Nav('About')}>About</li>
-            <li onClick={()=> Nav('Services')}>Services</li>
+            <li onClick={()=> Nav('Products')}>Products</li>
             <li onClick={()=> Nav('ContactUs')}>Contact Us</li>
         </ul>
         <div onClick={()=> setShow(!show)} className={icon}>
             <AiOutlineMenu/>
         </div>
         {show? <Mobile/> : null} 
-    </div>
+    </header>
   )
 }
 

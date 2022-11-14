@@ -1,10 +1,9 @@
 import React from 'react'
 import Abouthome from './Abouthome'
 import Homepage from './Homepage'
-import { IoIosCall } from 'react-icons/io'
-import { BsWhatsapp } from 'react-icons/bs'
 import Servicehome from './Servicehome'
 import Contacthome from './Contacthome'
+import AdminDash from './AdminDash'
 const Main = () => {
   return (
     <div>
@@ -12,10 +11,7 @@ const Main = () => {
         <Abouthome/>
         <Servicehome/>
         <Contacthome/>
-        <div className='Reach_out'>
-          <IoIosCall className='Reach_out__icons'/>
-          <BsWhatsapp className='Reach_out__icons'/>
-        </div>
+        <AdminDash/>
     </div>
   )
 }
