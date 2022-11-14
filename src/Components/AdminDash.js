@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 // import { collection, addDoc } from 'firebase/firestore'
 // import { db } from '../lib/Base'
 
@@ -15,8 +15,8 @@ const AdminDash = (e) => {
     //         console.log(response.id)
     //     }).catch(err=> console.log(err.message))
     // } 
-    const[name,setName] = useState('')
-    console.log(setName(), name)
+    // const[name,setName] = useState('')
+    // console.log(setName(), name)
   return (
     <div>
         {/* <form onSubmit={handleSubmit}>
