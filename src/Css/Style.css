@@ -40,6 +40,7 @@
     height: 40px;
     margin: 5px;
     position: sticky;
+    /* background-color: rgb(212, 211, 211); */
     z-index: 9999;
     bottom: 30px;
     left: 100%;
@@ -121,6 +122,103 @@
     background-size: cover;
 }
 
+.About_container {
+    width: 100%;
+    height: max-content;
+    background-color: #fff;
+    padding: 30px;
+}
+
+.About_Top {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.About_Img__container {
+    width: 50%;
+    height: 90%;
+    margin-left: -120px;
+    object-fit: cover;
+}
+
+.About_Img__container img {
+    width: 100%;
+    height: 100%;
+}
+
+.About_Text {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background: #000; */
+    color: rgb(241, 124, 81);
+}
+
+.About_Text h1, .About_Text h3 {
+    width: 100%;
+    display: flex;
+    font-size: 35px;
+    justify-content: center;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.About_Text p {
+    width: 100%;
+    display: flex;
+    font-size: 19px;
+    line-height: 21px;
+    justify-content: center;
+    text-align: center;
+    margin: 15px 0px;
+}
+
+.Product_container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.Product_Card {
+    width: 23%;
+    height: 300px;
+    padding: 7px;
+    border-radius: 7px;
+    border: 1px solid gray;
+    /* background-color: black; */
+}
+
+.Product_container h1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: rgb(241, 124, 81);
+}
+
+.Product_Card img {
+    width: 100%;
+    height: 70%;
+    /* border: none; */
+    display: flex;
+    background-color: rgb(194, 15, 15);
+}
+
+.Order_btn {
+    padding: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(241, 124, 81);
+}
 
 .Abouthome_container {
     width: 100%;
@@ -295,10 +393,10 @@
 
 .Footer_container {
     width: 100%;
-    height: 30vh;
+    height: 35vh;
     padding: 25px;
     display: flex;
-    background: rgb(250, 248, 248);
+    background: rgb(212, 211, 211);
     justify-content: space-between;
     align-items: center;
 }
@@ -320,4 +418,8 @@
     list-style-type: none;
     padding: 5px;
     cursor: pointer;
+}
+
+.Index_container {
+    background-color: rgb(212, 211, 211);
 }

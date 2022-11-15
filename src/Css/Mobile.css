@@ -121,6 +121,31 @@
         width: 90%;
     }
 
+.About_container {
+    padding: 10px;
+}
+
+    .About_Top {
+        /* width: 100%; */
+        height: max-content;
+        flex-direction: column;
+        /* background: #000; */
+        padding: 20px 0px;
+    }
+
+    .About_Img__container {
+        width: 90%;
+        display: flex;
+        margin-left: 0px;
+        justify-content: center;
+        object-fit: contain;
+    }
+
+
+    .About_Text {
+        width: 90%;
+    }
+
     .Footer_container {
         flex-direction: column;
         height: max-content;

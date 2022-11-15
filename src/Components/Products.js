@@ -24,8 +24,19 @@ const Products = () => {
         }).catch(err=> console.log(err.message))
     }
   return (
-    <div>
-products
+    <div className='Product_container'>
+        <h1>Our Products</h1>
+        {
+            equipments.map((data)=>(
+                <section className='Product_Card'key={data.id}>
+            <img src='' alt='a pix'/>
+            <h3>{data.data.name}</h3>
+            <p>Price</p>
+            <button className='Order_btn'>Buy Now</button>
+        </section>
+            ))
+        }
+        
     </div>
   )
 }

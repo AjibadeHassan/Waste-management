@@ -15,7 +15,7 @@ import Footer from '../Components/Footer'
 
 const Index = () => {
   return (
-    <div>
+    <div className='Index_container'>
       <Router>
       <Totop/>
       <Header/>
