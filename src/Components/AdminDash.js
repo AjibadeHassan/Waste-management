@@ -6,9 +6,10 @@ const AdminDash = (e) => {
     const equipcollectionRef = collection(db, 'equipments')
    
     const [equipments, setequipments] = useState([])
-    useEffect(()=>{
+    
         getEquipments()
-    },[])
+    
+        
    
         
       
