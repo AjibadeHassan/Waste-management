@@ -5,13 +5,13 @@ import { db } from '../lib/Base'
 const Products = () => {
     const [equipments, setequipments] = useState([])
     useEffect(()=>{
-        getEquuipments()
+        getEquipments()
     },[])
 
     useEffect(()=>{
         console.log(equipments)
     },[equipments])
-    function getEquuipments(){
+    function getEquipments(){
         const equipmentcollectionRef = collection(db, 'equipments')
         getDocs(equipmentcollectionRef)
         .then(response=>{

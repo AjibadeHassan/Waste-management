@@ -191,7 +191,8 @@
 .Product_Card {
     width: 23%;
     height: 300px;
-    padding: 7px;
+    padding: 20px 7px;
+    margin: 20px 0px;
     border-radius: 7px;
     border: 1px solid gray;
     /* background-color: black; */
@@ -218,6 +219,14 @@
     border: none;
     border-radius: 5px;
     background-color: rgb(241, 124, 81);
+}
+.Order_btnn {
+    padding: 10px;
+    color: rgb(241, 124, 81);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
 }
 
 .Abouthome_container {
@@ -313,6 +322,50 @@
     align-items: center;
     justify-content: space-between;
    
+}
+
+.Admin_container {
+    width: 100%;
+    height: max-content;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Admin_container h1 {
+    color: rgb(241, 124, 81);
+    margin-bottom: 5px;
+}
+
+.Admin_prod__container {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10px;
+    flex-wrap: wrap;
+}
+
+.Upload_form {
+    width: 80%;
+    height: 70vh;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(206, 200, 200);
+    color: #fff;
+}
+
+.Upload_form input {
+    width: 30%;
+    height: 35px;
+    border-radius: 6px;
+    padding: 5px;
+    /* border: none; */
+    outline: rgb(241, 124, 81);
+    margin: 5px;
 }
 
 .Img_container {

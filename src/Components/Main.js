@@ -3,7 +3,7 @@ import Abouthome from './Abouthome'
 import Homepage from './Homepage'
 import Servicehome from './Servicehome'
 import Contacthome from './Contacthome'
-import AdminDash from './AdminDash'
+// import AdminDash from './AdminDash'
 const Main = () => {
   return (
     <div>
@@ -11,7 +11,7 @@ const Main = () => {
         <Abouthome/>
         <Servicehome/>
         <Contacthome/>
-        <AdminDash/>
+        {/* <AdminDash/> */}
     </div>
   )
 }

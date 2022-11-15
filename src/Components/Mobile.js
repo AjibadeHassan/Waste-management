@@ -9,8 +9,8 @@ const Mobile = () => {
             window.location.reload()
         }}>Home</li>
             <li onClick={()=> Nav('About')}>About</li>
-            <li onClick={()=> Nav('Services')}>Services</li>
-            <li onClick={()=> Nav('ContactUs')}>Contact Us</li>
+            <li onClick={()=> Nav('Products')}>Products</li>
+            <li onClick={()=> Nav('AdminDash')}>Admin</li>
     </div>
   )
 }

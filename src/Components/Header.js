@@ -37,7 +37,7 @@ const Header = () => {
         }}>Home</li>
             <li onClick={()=> Nav('About')}>About</li>
             <li onClick={()=> Nav('Products')}>Products</li>
-            <li onClick={()=> Nav('ContactUs')}>Contact Us</li>
+            <li onClick={()=> Nav('Admin')}>Admin</li>
         </ul>
         <div onClick={()=> setShow(!show)} className={icon}>
             <AiOutlineMenu/>
