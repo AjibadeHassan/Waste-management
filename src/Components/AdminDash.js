@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { collection, addDoc, getDocs, deleteDoc } from 'firebase/firestore'
+import React, { useState, useEffect } from 'react';
+import { collection, addDoc, getDocs } from 'firebase/firestore'
 import { db } from '../lib/Base'
 
 const AdminDash = (e) => {
@@ -7,11 +7,11 @@ const AdminDash = (e) => {
     // const delcollectionRef = collection(db, 'equipments')
    
     const [equipments, setequipments] = useState([])
-    function deleteEquipment(id){
-        deleteDoc(equipcollectionRef, id)
-        .then(()=> console.log('Item deleted'))
-        .catch(err=> console.log(err))
-    }
+    // function deleteEquipment(id){
+    //     deleteDoc(equipcollectionRef, id)
+    //     .then(()=> console.log('Item deleted'))
+    //     .catch(err=> console.log(err))
+    // }
     
         getEquipments()
     
@@ -66,7 +66,7 @@ const AdminDash = (e) => {
                     <h3> {props.data.name} </h3>
                     <p> #{props.data.price} </p>
                     <button className='Order_btn'>Update Price</button>
-                    <button onClick={deleteEquipment(props.id)} className='Delete_btn'>Delete</button>
+                    <button  className='Delete_btn'>Delete</button>
                 </section>
                 ))
             }
