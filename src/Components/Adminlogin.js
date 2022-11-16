@@ -44,7 +44,7 @@ const Adminlogin = () => {
         <form onSubmit={VerifyAdmin} className='Admin_verify'>
             <input type='email' value={mail} onChange={e=> setMail(e.target.value) } placeholder='Email Address' />
             <input type='password' value={pass} onChange={e=>setPass(e.target.value)} placeholder='Password' />
-            <button type='submit'>login</button>
+            <button className='Order_btn Logbtn' type='submit'>login</button>
         </form>
     </div>
   )

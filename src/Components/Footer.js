@@ -1,6 +1,7 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom'
 const Footer = () => {
+  const Nav = useNavigate()
   return (
     <footer className='Footer_container'>
         <section className='Sitemap'>
@@ -13,7 +14,9 @@ const Footer = () => {
         <section className='Footer_contact'>
             <h1>Address</h1>
         </section>
-        <section className='Sitemap'></section>
+        <section className='Sitemap'>
+          <p onClick={()=> Nav('Admin-login')}>Copyright © 2022 - Fumi Sewage Services</p>
+        </section>
     </footer>
   )
 }

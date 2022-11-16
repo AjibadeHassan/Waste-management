@@ -476,6 +476,18 @@
     cursor: pointer;
 }
 
+.Logbtn {
+    width: 180px;
+}
+
+.Sitemap p {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* cursor: pointer; */
+    align-items: flex-end;
+}
+
 .Index_container {
     background-color: rgb(212, 211, 211);
 }
