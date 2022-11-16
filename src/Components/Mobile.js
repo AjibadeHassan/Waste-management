@@ -10,7 +10,7 @@ const Mobile = () => {
         }}>Home</li>
             <li onClick={()=> Nav('About')}>About</li>
             <li onClick={()=> Nav('Products')}>Products</li>
-            <li onClick={()=> Nav('AdminDash')}>Admin</li>
+            <li ></li>
     </div>
   )
 }
