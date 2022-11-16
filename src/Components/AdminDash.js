@@ -3,16 +3,17 @@ import { collection, addDoc, getDocs } from 'firebase/firestore'
 import { db } from '../lib/Base'
 
 const AdminDash = (e) => {
-    const equipcollectionRef = collection(db, 'equipments')
+   
     // const delcollectionRef = collection(db, 'equipments')
    
-    const [equipments, setequipments] = useState([])
+   
     // function deleteEquipment(id){
     //     deleteDoc(equipcollectionRef, id)
     //     .then(()=> console.log('Item deleted'))
     //     .catch(err=> console.log(err))
     // }
-    
+    const equipcollectionRef = collection(db, 'equipments')
+     const [equipments, setequipments] = useState([])
         getEquipments()
     
         

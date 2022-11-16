@@ -13,6 +13,9 @@ const Footer = () => {
         </section>
         <section className='Footer_contact'>
             <h1>Address</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit
+       molestias minus fugiat sit quaerat eligendi excepturi dolores commodi voluptates fugit beatae maxime
+       accusamus quis blanditiis nobis accusantium, magni ex minima?</p>
         </section>
         <section className='Sitemap'>
           <p onClick={()=> Nav('Admin-login')}>Copyright © 2022 - Fumi Sewage Services</p>

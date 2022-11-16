@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Adminlogin = () => {
   const Nav = useNavigate()
-    const [mail, setMail] = useState('')
+    const [user, setuser] = useState('')
     const [pass, setPass] = useState('')
     const [api, setApi] = useState([])
      getAdmin()
@@ -28,13 +28,15 @@ const Adminlogin = () => {
     const VerifyAdmin = (e)=> {
       e.preventDefault()
       const Data = api[0].data;
-      const getEmail = Data.email
-      const getPass = Data.password
-      if(!mail || !pass) {
-        return
-      }  else if(mail === getEmail && pass === getPass) {
+      const getuser = Data.username
+      const getPass = Data.pass
+      console.log(getuser, getPass)
+      if(!user || !pass) {
+        alert('User not authorised')
+      }  else if(user === getuser && pass === getPass) {
         Nav('AdminDash')
       } else{
+        // alert('fill in your data')
         return
       }
     }
@@ -42,7 +44,7 @@ const Adminlogin = () => {
     <div className='Adminlog_container'>
         <h1>Login As Administrator </h1>
         <form onSubmit={VerifyAdmin} className='Admin_verify'>
-            <input type='email' value={mail} onChange={e=> setMail(e.target.value) } placeholder='Email Address' />
+            <input type='name' value={user} onChange={e=> setuser(e.target.value) } placeholder='username' />
             <input type='password' value={pass} onChange={e=>setPass(e.target.value)} placeholder='Password' />
             <button className='Order_btn Logbtn' type='submit'>login</button>
         </form>

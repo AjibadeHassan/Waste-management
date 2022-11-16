@@ -146,6 +146,15 @@
         width: 90%;
     }
 
+    .Sitemap{
+        width: 80%;
+    }
+
+    .Footer_contact {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
     /* .Porduct_container {
         justify-content: center;
     } */

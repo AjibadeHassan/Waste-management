@@ -466,6 +466,7 @@
 .Sitemap {
     width: 30%;
     height: 100%;
+    text-align: center;
     color: rgb(241, 124, 81);
     /* background-color: rgb(16, 230, 105); */
 }
@@ -474,6 +475,23 @@
     list-style-type: none;
     padding: 5px;
     cursor: pointer;
+}
+
+.Footer_contact {
+    width: 40%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Footer_contact h1 {
+    margin-bottom: 15px;
+}
+
+.Footer_contact p {
+    width: 90%;
+    color: rgb(241, 124, 81);
 }
 
 .Logbtn {
