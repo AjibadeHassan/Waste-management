@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import { collection, addDoc, getDocs } from 'firebase/firestore'
+import { collection, addDoc, getDocs, deleteDoc } from 'firebase/firestore'
 import { db } from '../lib/Base'
 
 const AdminDash = (e) => {
     const equipcollectionRef = collection(db, 'equipments')
+    // const delcollectionRef = collection(db, 'equipments')
    
     const [equipments, setequipments] = useState([])
+    function deleteEquipment(id){
+        deleteDoc(equipcollectionRef, id)
+        .then(()=> console.log('Item deleted'))
+        .catch(err=> console.log(err))
+    }
     
         getEquipments()
     
@@ -34,8 +40,8 @@ const AdminDash = (e) => {
         if (name === '' || price === '') {
             return
         }
-        alert(name)
-        alert(price)
+        // alert(name)
+        // alert(price)
         const myData = {
             name: name,
             price: price
@@ -59,7 +65,8 @@ const AdminDash = (e) => {
                     <img src='' alt='a pix' />
                     <h3> {props.data.name} </h3>
                     <p> #{props.data.price} </p>
-                    <button className='Order_btn'>Buy Now</button>
+                    <button className='Order_btn'>Update Price</button>
+                    <button onClick={deleteEquipment(props.id)} className='Delete_btn'>Delete</button>
                 </section>
                 ))
             }
@@ -68,7 +75,7 @@ const AdminDash = (e) => {
         <form className='Upload_form' onSubmit={handleSubmit}>
           
         <input  value={name} placeholder='Product Name' onChange={e=> setName(e.target.value)} type='text' />
-                <input  value={price} placeholder='Price' onChange={e=> setPrice(e.target.value)} type='number' />
+        <input  value={price} placeholder='Price' onChange={e=> setPrice(e.target.value)} type='number' />
             <button className='Order_btnn' type='submit'>Submit</button>
         </form>
     </div>

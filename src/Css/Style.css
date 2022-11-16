@@ -218,6 +218,7 @@
     color: #fff;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
     background-color: rgb(241, 124, 81);
 }
 .Order_btnn {
@@ -416,12 +417,14 @@
     font-weight: 500;
     align-items: center;
     border-radius: 22px;
+    cursor: pointer;
     border: 1px solid rgb(250, 79, 17);
 }
 
 .About_btn {
   background-color: #fff;
   color: rgb(241, 124, 81);
+  cursor: pointer;
 }
 
 .Contacthome {
@@ -475,4 +478,56 @@
 
 .Index_container {
     background-color: rgb(212, 211, 211);
+}
+
+.Adminlog_container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: rgb(241, 124, 81);
+    color: #fff;
+}
+
+.Adminlog_container h1 {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Admin_verify {
+    width: 50%;
+    height: 40vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.Admin_verify input {
+    width: 80%;
+    /* margin-left: 10%; */
+    margin: 15px 0px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: 1px solid rgb(241, 124, 81);
+}
+
+
+
+.Delete_btn {
+    padding: 13px;
+    color: rgb(241, 124, 81);
+    border: none;
+    border-radius: 5px;
+    margin-left: 35px;
+    cursor: pointer;
 }

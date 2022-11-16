@@ -146,6 +146,15 @@
         width: 90%;
     }
 
+    /* .Porduct_container {
+        justify-content: center;
+    } */
+
+    .Product_Card {
+        width: 80%;
+        margin-left: 10%;
+    }
+
     .Footer_container {
         flex-direction: column;
         height: max-content;

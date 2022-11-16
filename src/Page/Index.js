@@ -12,6 +12,7 @@ import Totop from '../Components/Totop'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Main from '../Components/Main'
 import Footer from '../Components/Footer'
+import Adminlogin from '../Components/Adminlogin'
 import AdminDash from '../Components/AdminDash'
 const Index = () => {
   return (
@@ -23,7 +24,8 @@ const Index = () => {
         <Route path='/' element={<Main/>}/>
         <Route path='About' element={<About/>}/>
         <Route path='Products' element={<Products/>}/>
-        <Route path='Admin' element={<AdminDash/>}/>
+        <Route path='Admin-login' element={<Adminlogin/>}/>
+        <Route path='Admin-login/AdminDash' element={<AdminDash/>}/>
       </Routes>
       <Footer/>
       <IoIosCall className='Reach_out__icons__1'/>
