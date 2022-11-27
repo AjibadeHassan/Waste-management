@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../Assets/Profile.png'
 import Logo1 from '../Assets/newhome.jpg'
+import Footer from './Footer';
 
 const About = () => {
   return (
@@ -48,6 +49,8 @@ your septic tank evacuation. We cover all over lagos. We are prompt.
        accusamus quis blanditiis nobis accusantium, magni ex minima?</p>
   </section>
 </div>
+
+<Footer/>
 
     </div>
   )

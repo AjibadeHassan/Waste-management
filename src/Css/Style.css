@@ -449,7 +449,7 @@
 
 .Footer_container {
     width: 100%;
-    height: 35vh;
+    height: max-content;
     padding: 25px;
     display: flex;
     background: rgb(212, 211, 211);
@@ -471,8 +471,14 @@
     /* background-color: rgb(16, 230, 105); */
 }
 
+.Sitemap a {
+    text-decoration: none;
+}
+
 .Sitemap li {
     list-style-type: none;
+    /* text-decoration: none; */
+    color: rgb(241, 124, 81);
     padding: 5px;
     cursor: pointer;
 }

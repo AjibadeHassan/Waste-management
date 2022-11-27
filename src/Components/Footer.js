@@ -1,15 +1,20 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link'
 const Footer = () => {
   const Nav = useNavigate()
   return (
     <footer className='Footer_container'>
         <section className='Sitemap'>
             <h1>Sitemap</h1>
-            <li>Home</li>
+            <li onClick={()=> Nav('/')}>Home</li>
+            <Link to="#About">
             <li>About</li>
+            </Link>
+            <Link to="#Services">
             <li>Services</li>
-            <li>Products</li>
+            </Link>
+            <li onClick={()=> Nav('Products')}>Products</li>
         </section>
         <section className='Footer_contact'>
             <h1>Address</h1>

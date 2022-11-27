@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { collection, addDoc, getDocs } from 'firebase/firestore'
 import { db } from '../lib/Base'
+import Footer from './Footer';
 
 const AdminDash = (e) => {
    
@@ -79,6 +80,7 @@ const AdminDash = (e) => {
         <input  value={price} placeholder='Price' onChange={e=> setPrice(e.target.value)} type='number' />
             <button className='Order_btnn' type='submit'>Submit</button>
         </form>
+        <Footer/>
     </div>
   )
 }

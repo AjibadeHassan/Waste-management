@@ -7,7 +7,7 @@ const Abouthome = () => {
   const Nav = useNavigate()
  
   return (
-    <div className='Abouthome_container'>
+    <div className='Abouthome_container' id="About">
       <h1>About Us</h1>
        <div className='Abothome_Div'>
        <section className='Img_container'>

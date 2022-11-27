@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {collection, getDocs } from 'firebase/firestore'
 import { db } from '../lib/Base'
+import Footer from './Footer'
 
 const Products = () => {
     const [equipments, setequipments] = useState([])
@@ -36,6 +37,8 @@ const Products = () => {
         </section>
             ))
         }
+
+        <Footer/>
         
     </div>
   )

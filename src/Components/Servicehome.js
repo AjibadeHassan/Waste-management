@@ -4,7 +4,7 @@ import { BsTrash,BsLaptop } from 'react-icons/bs'
 import { GiSpanner } from 'react-icons/gi'
 const Servicehome = () => {
   return (
-    <div className='Servicehome_container'>
+    <div className='Servicehome_container' id="Services">
       <h1>Our Services</h1>
       <p>Fumi Sewage Services provide the widest range of Sewage 
         treatment and waste disposal of hazardous and non hazardous waste.</p>
