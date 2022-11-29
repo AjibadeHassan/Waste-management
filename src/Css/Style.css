@@ -447,6 +447,33 @@
     height: 40vh;
 }
 
+.Uploadbtn {
+    width: 75%;
+    height: 40px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(241, 124, 81);
+    color: #fff;
+}
+
+.upload_cont {
+    width: 30%;
+    height: 200px;
+    background: #000;
+    margin-bottom: 20px;
+}
+
+.upload_cont img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
 .Footer_container {
     width: 100%;
     height: max-content;
