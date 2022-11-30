@@ -29,6 +29,10 @@
         /* border: 1px solid white; */
     }
 
+    .Delete_btn {
+        margin-left: 45px;
+    }
+
 
     @keyframes myAnim {
         0% {

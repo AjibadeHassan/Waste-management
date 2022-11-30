@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { collection, addDoc, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { db, storage } from '../lib/Base';
 import Footer from './Footer';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
@@ -54,7 +54,11 @@ const uploadStorage = (file)=>{
         })
     }
 
-
+    const DeleteProduct = (id)=>{
+        // e.preventDefault()
+        const deldoc = doc(db, 'equipments', id)
+        deleteDoc(deldoc)
+    }
     
 
 
@@ -88,8 +92,8 @@ const uploadStorage = (file)=>{
                     <img src={props.data.imageUrl} alt='a pix' />
                     <h3> {props.data.name} </h3>
                     <p> #{props.data.price} </p>
-                    <button className='Order_btn'>Update Price</button>
-                    <button  className='Delete_btn'>Delete</button>
+                    <button className='Order_btn'>Update Product</button>
+                    <button onClick={()=> DeleteProduct(props.id)} className='Delete_btn'>Delete</button>
                 </section>
                 ))
             }

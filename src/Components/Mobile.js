@@ -8,9 +8,15 @@ const Mobile = () => {
          <li onClick={()=>{ Nav('/')
             window.location.reload()
         }}>Home</li>
-            <li onClick={()=> Nav('About')}>About</li>
-            <li onClick={()=> Nav('Products')}>Products</li>
-            <li ></li>
+            <li onClick={()=>{
+               Nav('About')
+               window.location.reload()
+            }}>About</li>
+            <li onClick={()=>{
+              Nav('Products')
+              window.location.reload()
+            }}>Products</li>
+            <li></li>
     </div>
   )
 }

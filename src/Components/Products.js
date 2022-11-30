@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {collection, getDocs } from 'firebase/firestore'
 import { db } from '../lib/Base'
+import { ExternalLink as Link } from 'react-external-link'
 import Footer from './Footer'
 
 const Products = () => {
@@ -33,7 +34,9 @@ const Products = () => {
             <img src={data.data.imageUrl} alt='a pix'/>
             <h3> {data.data.name} </h3>
             <p> #{data.data.price} </p>
+            <Link href='https://api.whatsapp.com/send/?phone=%2B2349079709011&text&type=phone_number&app_absent=0'>
             <button className='Order_btn'>Buy Now</button>
+            </Link>
         </section>
             ))
         }
