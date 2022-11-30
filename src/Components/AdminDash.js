@@ -2,50 +2,40 @@ import React, { useState, useEffect } from 'react';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { db, storage } from '../lib/Base';
 import Footer from './Footer';
-import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
 const AdminDash = () => {
    
     const equipcollectionRef = collection(db, 'equipments')
      const [equipments, setequipments] = useState([])
      const [info, setInfo] = useState(null)
-     const [progress, setProgress] = useState(0)
+     const [progress, setProgress] = useState()
      const [myUrl, setMyUrl] = useState()
 
      const Upload =(event)=>{
+        if(event.target.files[0]){
         const File = event.target.files[0]
-        const Any = URL.createObjectURL(File)
-        setInfo(Any)
-        uploadStorage(Any)
-        console.log(equipments)
+        setInfo(File);
+        const Url = URL.createObjectURL(File)
+        setMyUrl(Url)
+        }
+        
      }
 
 const uploadStorage = (file)=>{
-    if(!file) {
-        console.log('no data available')
-    };
+    if(file === null) return;
     const storageRef = ref(storage, `/files/${file.name}`)
-    const UploadTask = uploadBytesResumable(storageRef, file)
-
-    UploadTask.on(
-        "state_changed",
-        (snapshot) =>{
-            const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes)*100)
-            setProgress(prog)
-            console.log(progress)
-        },
-        (err)=> {
-            console.log(err)
-        },
-        ()=>{
-            getDownloadURL(UploadTask.snapshot.ref)
-            .then(url => {
-                setMyUrl(url)
-            })
-
-        }
-    )
+    uploadBytes(storageRef, file).catch(err=> console.log(err))
+    .then(()=>  getDownloadURL(storageRef)
+    .then((url)=> setProgress(url)))
+   
+   
+    
 }
+
+     useEffect(()=>{
+        uploadStorage(info)
+     }, [info])
       getEquipments()
    
     useEffect(()=>{
@@ -63,24 +53,27 @@ const uploadStorage = (file)=>{
             setequipments(equip)
         })
     }
+
+
+    
+
+
     const handleSubmit = (e)=>{
         e.preventDefault()
-        if (name === '' || price === '' || myUrl === '') {
-            return
-        }
-        // alert(name)
-        // alert(price)
+        if (name === '' || price === '' || progress ==='') return;
+      
         const myData = {
             name: name,
             price: price,
-            imageUrl: myUrl
+            imageUrl: progress
         }
         addDoc(equipcollectionRef, myData)
-        // .then(response=>{
-        //     console.log(response.id)
-        // }).catch(err=> console.log(err.message))
-        // window.location.reload()
-    console.log (myUrl)
+         .then(()=>{
+            setName('');
+            setPrice('');
+            setMyUrl('')
+
+         })
     } 
     const[name,setName] = useState('')
     const [price, setPrice] =useState('')
@@ -105,7 +98,7 @@ const uploadStorage = (file)=>{
        
         <form className='Upload_form' onSubmit={handleSubmit}>
         <div className='upload_cont'>
-            <img src={info} alt='a pix' />
+            <img src={myUrl} alt='a pix' />
         </div>
         <label htmlFor='choose'>
                <input id='choose' type='file'  onChange={Upload} hidden/>
