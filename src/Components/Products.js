@@ -30,7 +30,7 @@ const Products = () => {
         {
             equipments.map((data)=>(
                 <section className='Product_Card'key={data.id}>
-            <img src='' alt='a pix'/>
+            <img src={data.data.imageUrl} alt='a pix'/>
             <h3> {data.data.name} </h3>
             <p> #{data.data.price} </p>
             <button className='Order_btn'>Buy Now</button>
