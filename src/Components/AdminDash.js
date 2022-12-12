@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { collection, addDoc, getDocs, deleteDoc, doc } from 'firebase/firestore';
+import { collection, addDoc, getDocs, deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import { db, storage } from '../lib/Base';
 import Footer from './Footer';
+import { HashLink as Link } from 'react-router-hash-link';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
 const AdminDash = () => {
@@ -11,6 +12,28 @@ const AdminDash = () => {
      const [info, setInfo] = useState(null)
      const [progress, setProgress] = useState()
      const [myUrl, setMyUrl] = useState()
+     const [update, setUpdate] = useState(false)
+     const [prodid, setProdid] = useState()
+
+     function updatePrice(id){
+        if (name === '' || price === '' || progress ==='') return;
+        const myData = {
+            name: name,
+            price: price,
+            imageUrl: progress
+        }
+        const Document = doc(db, 'equipments', id)
+        updateDoc(Document, myData)
+         .then(()=>{
+            setName('');
+            setPrice('');
+            setMyUrl('');
+            setUpdate(false)
+
+         })
+       
+     }
+
 
      const Upload =(event)=>{
         if(event.target.files[0]){
@@ -22,15 +45,13 @@ const AdminDash = () => {
         
      }
 
+    
 const uploadStorage = (file)=>{
     if(file === null) return;
     const storageRef = ref(storage, `/files/${file.name}`)
     uploadBytes(storageRef, file).catch(err=> console.log(err))
     .then(()=>  getDownloadURL(storageRef)
-    .then((url)=> setProgress(url)))
-   
-   
-    
+    .then((url)=> setProgress(url)))  
 }
 
      useEffect(()=>{
@@ -38,11 +59,12 @@ const uploadStorage = (file)=>{
      }, [info])
       getEquipments()
    
-    useEffect(()=>{
-        // console.log(equipments)
-    },[equipments])
+    // useEffect(()=>{
+    //     // console.log(equipments)
+    // },[equipments])
     
  function getEquipments(){
+    // if(equipments) return;
         getDocs(equipcollectionRef, 'equipments')
         .then(response=>{
             // console.log(response)
@@ -88,31 +110,62 @@ const uploadStorage = (file)=>{
         <div className='Admin_prod__container'>
             {
                 equipments.map((props)=>(
-                    <section className='Product_Card'key={props.id}>
+                    <div className='Product_Card'key={props.id}>
                     <img src={props.data.imageUrl} alt='a pix' />
                     <h3> {props.data.name} </h3>
                     <p> #{props.data.price} </p>
-                    <button className='Order_btn'>Update Product</button>
+                    <Link to="#Update">
+                    <button onClick={()=>{
+                        setUpdate(true)
+                        setProdid(props.id)
+                        }} className='Order_btn'>Update Product</button>
+                        </Link>
                     <button onClick={()=> DeleteProduct(props.id)} className='Delete_btn'>Delete</button>
-                </section>
+                </div>
                 ))
             }
-        </div>
-        <h1>Upload Product</h1>
+        </div> 
+        
+            {
+                update?(
+                    <section id="Update">
+                    <h1>Update Product</h1>
        
-        <form className='Upload_form' onSubmit={handleSubmit}>
-        <div className='upload_cont'>
-            <img src={myUrl} alt='a pix' />
-        </div>
-        <label htmlFor='choose'>
-               <input id='choose' type='file'  onChange={Upload} hidden/>
-               <div  className='Order_btnn'>Upload Image</div>
-           </label>
-          
-        <input  value={name} placeholder='Product Name' onChange={e=> setName(e.target.value)} type='text' />
-        <input  value={price} placeholder='Price' onChange={e=> setPrice(e.target.value)} type='number' />
-            <button className='Order_btnn' type='submit'>Submit</button>
-        </form>
+                    <form className='Upload_form'>
+                    <div className='upload_cont'>
+                        <img src={myUrl} alt='a pix' />
+                    </div>
+                    <label htmlFor='choose'>
+                           <input id='choose' type='file'  onChange={Upload} hidden/>
+                           <div  className='Order_btnn'>Upload Image</div>
+                       </label>
+                      
+                    <input  value={name} placeholder='Product Name' onChange={e=> setName(e.target.value)} type='text' />
+                    <input  value={price} placeholder='Price' onChange={e=> setPrice(e.target.value)} type='number' />
+                        <span className='Order_btnn' role='button'  onClick={()=> updatePrice(prodid)}>Update Product</span>
+                    </form>
+                    </section>
+                ) : (
+                    <section>
+                        <h1>Upload Product</h1>
+       
+       <form className='Upload_form' onSubmit={handleSubmit}>
+       <div className='upload_cont'>
+           <img src={myUrl} alt='a pix' />
+       </div>
+       <label htmlFor='choose'>
+              <input id='choose' type='file'  onChange={Upload} hidden/>
+              <div  className='Order_btnn'>Upload Image</div>
+          </label>
+         
+       <input  value={name} placeholder='Product Name' onChange={e=> setName(e.target.value)} type='text' />
+       <input  value={price} placeholder='Price' onChange={e=> setPrice(e.target.value)} type='number' />
+           <button className='Order_btnn' type='submit'>Submit</button>
+       </form>
+                    </section>
+                )
+            }
+        
         <Footer/>
     </div>
   )
